@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head><title>Quiz app</title></head>
+<style>
+body {
+    background-color: #b8c6db;   
+    display: flex;
+    justify-content: center;
+    margin: 150px;
+}
+.quiz-container {
+    width: 600px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+.quiz-header {
+    padding: 50px; }
+h2 {
+    padding: 20px;
+    text-align: center;
+}
+ul {
+    list-style-type: none;
+}
+ul li {
+    font-size: 20px;
+    margin: 15px;
+}
+button {
+    background-color: #8e44ad;
+    color: #fff;
+    border: none;
+    display: block;
+    width: 100%;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 20px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #732d91;
+}
+</style>
+<body>
+ <div class="quiz-container" id="quiz_block">
+  <div class="quiz-header">
+    <h2 id="question">Question is loading...</h2>
+    <ul>
+     <li> <input type="radio" name="option"  class="option" id="a" /> 
+            <label for="a" id="a_text">Answer...</label> </li>
+     <li> <input type="radio" name="option"  class="option" id="b" /> 
+            <label for="b" id="b_text">Answer...</label> </li>
+     <li> <input type="radio" name="option"  class="option" id="c" /> 
+            <label for="c" id="c_text">Answer...</label> </li>
+     <li> <input type="radio" name="option"  class="option" id="d" /> 
+            <label for="d" id="d_text">Answer...</label> </li>
+    </ul>
+   </div> 
+   <button onclick="CheckAnswer()">Submit</button> <br>
+   <button onclick="ShowScore()">Score</button>
+ </div>
+<script>
+let currentQuiz = 0;
+let score = 0;
+
+let quiz_block = document.getElementById("quiz_block");
+let AllOptions = document.querySelectorAll(".option");
+let questionElement = document.getElementById("question");
+let a_text = document.getElementById("a_text");
+let b_text = document.getElementById("b_text");
+let c_text = document.getElementById("c_text");
+let d_text = document.getElementById("d_text");
+
+let quizData = [   
+{   question: "Which language runs in a web browser?",
+    a: "Java",
+    b: "C",
+    c: "Python",
+    d: "JavaScript",
+    correct: "d"  } , 
+{   question: "What does CSS stand for?",
+    a: "Central Style Sheets",
+    b: "Cascading Style Sheets",
+    c: "Cascading Simple Sheets",
+    d: "Cars SUVs Sailboats",
+    correct: "b"   } , 
+{   question: "What does HTML stand for?",
+    a: "Hypertext Markup Language",
+    b: "Hypertext Markdown Language",
+    c: "Hyperloop Machine Language",
+    d: "Helicopters Terminals Motorboats Lamborginis",
+    correct: "a"  }  ];
+
+function deselectAnswers()  {
+    AllOptions.forEach(  function(option){option.checked = false });
+};
+
+function getSelected() {
+    let selected;
+    AllOptions.forEach(function(option)  {
+        if (option.checked) {   selected = option.id;  }
+    });
+    return selected;
+};
+
+function loadQuiz() {
+    deselectAnswers();
+    let currentQuizData = quizData[currentQuiz];
+    questionElement.innerText = currentQuizData.question;
+    a_text.innerText = currentQuizData.a;
+    b_text.innerText = currentQuizData.b;
+    c_text.innerText = currentQuizData.c;
+    d_text.innerText = currentQuizData.d;
+};
+
+loadQuiz();
+
+function CheckAnswer() {
+   let selected = getSelected();
+   if (selected) {
+      if (selected === quizData[currentQuiz].correct) {
+ 			score++;
+      }
+      currentQuiz++;
+      if (currentQuiz < quizData.length) {
+      		loadQuiz();
+      } 
+      else {
+quiz_block.innerHTML = "<h2>You answered" +score+"/" +quizData.length+ "questions correctly</h2><button onclick='history.go(0)'>Play Again</button>";
+       }
+   }
+   else{
+        alert ("Please select an option");
+   }
+}
+
+function ShowScore() {
+  alert ("Your Current Score : "+score);
+}
+</script>
+</body>
+</html>
