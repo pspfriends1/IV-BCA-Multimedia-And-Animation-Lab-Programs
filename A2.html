@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML5 Form</title>
+    <style>
+        h1 {
+            text-align: center;
+	    color: #4caf50;
+        }
+        form {
+            width: 500px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 50px rgba(0, 0, 0,0.5 );
+            background-color: #d9dfd1;
+        }
+
+        label {
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+       input[type="text"], input[type="password"], input[type="tel"],
+input[type="email"], input[type="url"], input[type="file"],
+input[type="submit"], input[type="reset"], input[type="range"] {
+            width: 95%;
+            padding: 5px;
+            margin: 10px 10px ;
+            border: none;
+            border-radius: 5px;
+            background-color: white;
+            font-size: 18px;
+        }
+
+        input[type="range"] {
+            appearance: none;
+            height: 5px;
+        }
+
+        input[type="range"]::-webkit-slider-thumb{
+        appearance: none;
+        width: 15px;
+        height: 15px;
+        border-radius: 20px;
+        background: green;
+        cursor: pointer;
+        }
+
+        input[type="submit"], input[type="reset"] {
+            width: 20%;
+            background-color: #4caf50;
+            color: white;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover, input[type="reset"]:hover {
+            background-color: #caf8cc;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+  <h1>Registration Form</h2>
+  <form>
+   <label for="name">Name:</label>
+   <input type="text" id="name" name="name" placeholder="Enter your name" required />
+
+   <label for="password">Password:</label>
+   <input type="password" id="password" name="password" 
+     placeholder="Enter your password" required />
+
+   <label for="confirm_password">Confirm Password:</label>
+   <input type="password" id="confirm_password" name="confirm_password"  
+     placeholder="Confirm password" required />
+
+    <label for="contact_number">Contact Number:</label>
+    <input type="tel" id="contact_number" name="contact_number" pattern="[0-9]{10}" 
+     placeholder="Enter a number" required />
+
+    <label for="range">Skill Range:</label>
+    <input type="range" id="range" name="range" min="0" max="10" required />
+
+   <label for="email">Email:</label>
+   <input type="email" id="email" name="email" placeholder="Enter your email" required />
+
+    <label for="url">Profile URL:</label>
+    <input type="url" id="url" name="url" placeholder="Enter your URL" required />
+
+    <label for="file">Resume:</label>
+    <input type="file" id="file" name="file" required />
+
+
+    <center>   <input type="submit" value="Submit" />
+               <input type="reset" value="Reset" />    </center>
+
+
+<script>
+   let Pswd = document.getElementById("password");
+   let CPswd  =  document.getElementById("confirm_password");
+
+   CPswd.addEventListener("input", function () 
+   {
+if (Pswd.value !== CPswd.value) {
+CPswd.setCustomValidity("Passwords do not match");
+     	} 
+else {
+        	CPswd.setCustomValidity("");
+     	}
+   });
+</script>
+</form>
+</body>
+</html>
