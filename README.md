@@ -8,7 +8,7 @@
     <li><a href="A2.html"> Registration Form </a>
     <li><a href="A3.html"> Toggle Face </a>
     <li><a href="A4.html"> Solar System </a>
-    <li> SVG Car,Sun,Road..<a href="A6.html"> With Viewbox  </a> and <a href="A6_New.html">  Without Viewbox</a>
+    <li><a href="A6.html"> SVG Car,Sun,Road : With Viewbox  </a> and <a href="A6_New.html">  Without Viewbox</a>
     <li><a href="A8.html"> Time Table </a>
   </ol><br>
   <li>Part B Programs <br>
