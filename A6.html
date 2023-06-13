@@ -2,11 +2,9 @@
 <!DOCTYPE html>
 <html><body>
 
-
 <svg width="25cm" height="25cm" viewBox="0 0 7 7">
        
 <defs>
-
 
 <!-- A rotating wheel for the cart -->
 <g id="wheel">  
@@ -16,7 +14,6 @@
 <rect x="-0.9" y="-0.05" width="1.8" height="0.1" fill="black" transform="rotate(240)"/>  
 </g>
 
-
 <!--  A cart made from two wheels and two rects -->
 <g id="cart" transform="translate(2.5,0) scale(0.3,0.3)"> 
 <use xlink:href="#wheel" transform="translate(-1.8,-0.1) scale(0.9,0.9)"/>
@@ -24,7 +21,6 @@
  <rect x="-3" y="0" width="6" height="2" fill="#CC0000"/>
  <rect x="-2.3" y="1.9" width="2.6" height="1" fill="#CC0000"/>
  </g>
-
 
 <!-- a Sun with Lines -->
 <g id="sun" fill="yellow" stroke="#DD8800" stroke-width="0.03"> 
@@ -37,10 +33,8 @@
    <circle cx="0" cy="0" r="0.5"/>
 </g>
 
-
 <!-- single vanes -->
-<polygon id="vane" points="0,0  0.5,0.1  1.5,0  0.5,-0.1"
-fill="grey" stroke="pink" stroke-width="0.015"/>
+<polygon id="vane" points="0,0  0.5,0.1  1.5,0  0.5,-0.1" fill="grey" stroke="pink" stroke-width="0.015"/>
              
 <!-- A windmill with  set of three vanes. -->
 <g id="windmill">  
@@ -52,33 +46,25 @@ fill="grey" stroke="pink" stroke-width="0.015"/>
    </g>
 </g>
 
-
 </defs>
-
-
 
 <g transform="translate(0,4) scale(1,-1)">
 	<!-- sky as background-->
   <rect x="0" y="0" width="7" height="7" fill="skyblue"/>  
   <!-- mountains -->                    
-  <polygon points="0,-1    0,0.8   1.5,1.65  1.8,1.3  3,2.1  4.7,0.7
- 6.1,1.2  7,0.8  7,-1" fill="green"/>   
+  <polygon points="0,-1    0,0.8   1.5,1.65  1.8,1.3  3,2.1  4.7,0.7  6.1,1.2  7,0.8  7,-1" fill="green"/>   
 <!-- road -->
 <rect x="0" y="-0.4" width="7" height="0.8" fill="black"/>  
 <!-- stripe in road -->                          
   <rect x="0" y="-0.02" width="7" height="0.04" fill="white"/>                       
   <!-- Add All above definitions here -->
   <use xlink:href="#sun" transform="translate(5.8,3.2)"/>                                  
-  <use xlink:href="#windmill" transform="translate(0.75,1) 
-   scale(0.6,0.6)"/>                       
-  <use xlink:href="#windmill" transform="translate(2.2,1.3) 
-   scale(0.4,0.4)"/>
-  <use xlink:href="#windmill" transform="translate(3.7,0.8) 
-   scale(0.7,0.7)"/>
-   <use xlink:href="#cart"/>                                                                     
+  <use xlink:href="#windmill" transform="translate(0.75,1)  scale(0.6,0.6)"/>                       
+  <use xlink:href="#windmill" transform="translate(2.2,1.3) scale(0.4,0.4)"/>
+  <use xlink:href="#windmill" transform="translate(3.7,0.8) scale(0.7,0.7)"/>
+  <use xlink:href="#cart"/>                                                                     
                        
 </g>
-
 
 </svg>
 </body>
