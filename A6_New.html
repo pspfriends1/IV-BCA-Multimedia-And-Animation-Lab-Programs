@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <svg width="1000px" height="800px">
+
+        <defs>
+
+            <g id="wheel">
+                <circle cx="200" cy="280" r="40" stroke="black" stroke-width="10" fill="lightGray" />
+                <line x1="160" y1="280" x2="240" y2="280" stroke-width="5" stroke="black" />
+                <line x1="160" y1="280" x2="240" y2="280" stroke-width="5" stroke="black" transform="rotate(45 200 280)" />
+                <line x1="160" y1="280" x2="240" y2="280" stroke-width="5" stroke="black" transform="rotate(90 200 280)" />
+                <line x1="160" y1="280" x2="240" y2="280" stroke-width="5" stroke="black" transform="rotate(135 200 280)" />
+            </g>
+
+            <g id="cart" ">
+                <rect x=" 100" y="120" width="150" height="60" fill="red" />
+                <rect x="50" y="180" width="300" height="100" fill="red" />
+            </g>
+
+            <g id="sun" fill="yellow" stroke="orange" stroke-width="5">
+                <line x1="200" y1="50" x2="400" y2="50" />
+                <line x1="200" y1="50" x2="400" y2="50" transform="rotate(30 300 50)" />
+                <line x1="200" y1="50" x2="400" y2="50" transform="rotate(60 300 50)" />
+                <line x1="200" y1="50" x2="400" y2="50" transform="rotate(90 300 50)" />
+                <line x1="200" y1="50" x2="400" y2="50" transform="rotate(120 300 50)" />
+                <line x1="200" y1="50" x2="400" y2="50" transform="rotate(150 300 50)" />
+                <circle cx="300" cy="50" r="70" />
+            </g>
+
+            <polygon id="vane" points="100,150 150,160 250,150 150,140" fill="grey" stroke="lightgrey" stroke-width="5" />
+
+            <g id="windmill">
+                <rect x="100" y="150" width="15" height="400" fill="#AA9999" />
+                <g transform="translate(0,3)">
+                    <use xlink:href="#vane" />
+                    <use xlink:href="#vane" transform="rotate(120 105 150)" />
+                    <use xlink:href="#vane" transform="rotate(240 105 150)" />
+                </g>
+            </g>
+
+        </defs>
+
+        <g>
+            <rect x="0" y="0" width="1000px" height="800px" fill="skyblue"/>
+            <polygon points="0,800 0,500 400,300 550,400 650,350 800,450 920,320 1000,400 1000,800" fill="green"/>
+            
+            <rect x="0" y="600" width="1000" height="150" fill="black"/>
+            <rect x="0" y="670" width="1000" height="15" fill="white"/>
+            <use xlink:href="#wheel" transform="translate(120,400)" />
+            <use xlink:href="#wheel" transform="translate(280,400)" />
+            <use xlink:href="#cart" transform="translate(200,400)" />
+            
+            <use xlink:href="#sun" transform="translate(550,70)" />
+            
+            <use xlink:href="#windmill" transform="translate(600,100)  scale(0.6,0.6)"/>
+            <use xlink:href="#windmill" transform="translate(450,180)  scale(0.4,0.4)"/>
+            <use xlink:href="#windmill" transform="translate(200,20)   scale(0.7,0.7)"/>
+        </g>
+            
+    </svg>    
+</body>
+</html>
