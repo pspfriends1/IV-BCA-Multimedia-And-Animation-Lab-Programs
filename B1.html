@@ -3,31 +3,24 @@
 <head><title>Canvas Clock</title></head>
 <body>
 <center>
-<canvas id="canvas" width="150" height="150"></canvas>
+<canvas id="canvas" width="250" height="250"></canvas>
 </center>
 
 <script>
- function init(){
-  clock();
-  setInterval(clock, 1000);
-}
-
+ 
 function clock()
 {
   var now = new Date();
   var ctx = document.getElementById('canvas').getContext('2d');
   ctx.save();
-  ctx.clearRect(0,0,150,150);
-  ctx.translate(75,75);
-  ctx.scale(0.4,0.4);
+  ctx.clearRect(0,0,250,250);
+  ctx.translate(100,100);
+  ctx.scale(0.5,0.5);
   ctx.rotate(-Math.PI/2);
   ctx.strokeStyle = "black";
   ctx.fillStyle = "white";
   ctx.lineWidth = 8;
-  ctx.lineCap = "round";
-
-
-
+ 
 
   // Hour marks
   ctx.save();
@@ -42,11 +35,10 @@ function clock()
 
   // Minute marks
   ctx.save();
-  ctx.lineWidth = 5;
   for (i=0;i<60;i++){
     if (i%5!=0) {
       ctx.beginPath();
-      ctx.moveTo(117,0);
+      ctx.moveTo(115,0);
       ctx.lineTo(120,0);
       ctx.stroke();
     }
@@ -76,41 +68,41 @@ function clock()
   ctx.rotate( (Math.PI/30)*min + (Math.PI/1800)*sec )
   ctx.lineWidth = 10;
   ctx.beginPath();
-  ctx.moveTo(-28,0);
-  ctx.lineTo(112,0);
+  ctx.moveTo(-25,0);
+  ctx.lineTo(115,0);
   ctx.stroke();
   ctx.restore();
   
   // Write seconds
   ctx.save();
   ctx.rotate(sec * Math.PI/30);
-  ctx.strokeStyle = "#D40000";
-  ctx.fillStyle = "#D40000";
+  ctx.strokeStyle = "red";
+  ctx.fillStyle = "red";
   ctx.lineWidth = 6;
   ctx.beginPath();
   ctx.moveTo(-30,0);
-  ctx.lineTo(83,0);
+  ctx.lineTo(85,0);
   ctx.stroke();
+
   ctx.beginPath();
   ctx.arc(0,0,10,0,Math.PI*2,true);
   ctx.fill();
+  
   ctx.beginPath();
+  ctx.fillStyle = "rgba(0,0,0,0)";
   ctx.arc(95,0,10,0,Math.PI*2,true);
   ctx.stroke();
-  ctx.fillStyle = "rgba(0,0,0,0)";
-  ctx.arc(0,0,3,0,Math.PI*2,true);
   ctx.fill();
   ctx.restore();
 
+  //Outer circle
   ctx.beginPath();
   ctx.lineWidth = 14;
-  ctx.strokeStyle = '#325FA2';
-  ctx.arc(0,0,142,0,Math.PI*2,true);
+  ctx.strokeStyle = 'black';
+  ctx.arc(0,0,140,0,Math.PI*2,true);
   ctx.stroke();
-
   ctx.restore();
 } 
-
-init();
+setInterval(clock, 1000);
 </script>
 </body></html>
