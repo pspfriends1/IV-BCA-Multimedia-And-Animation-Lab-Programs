@@ -10,7 +10,7 @@
     <li><a href="A4.html"> Solar System </a>
     <li><a href="A6.html"> SVG Car,Sun,Road : With Viewbox  </a> and <a href="A6_New.html">  Without Viewbox</a>
     <li><a href="A8.html"> Time Table </a>
-  </ol><br>
+  </ol>
   <li>Part B Programs <br>
   <ol type="1">
    <li><a href="B1.html"> Clock using Canvas </a> 
